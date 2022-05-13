@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200&display=swap'); /* import da fonte ROBOTO FLEX */
+
+body {
+    margin: 0;
+    font-family: 'Roboto Flex', 'sans-serif';       /*Padronizando margem e fontes do body como um todo*/
+}
+
+body * {
+    box-sizing: border-box;     /*Em todo o body vai ser aplicado o box sizing border box*/
+}
+
+.main-login{        /*Div pai que engloba toda tela de login/cadastro */
+    width: 100vw;
+    height: 100vh;
+    background: #051c2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login{        /*Referente a toda parte esquerda da tela de login/cadastro*/
+    width: 50vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login-img{        /*Div da imagem dos equipamentos*/
+    width: 35vw;
+}
+
+.left-login > h1{       /*Texto da parte esquerda da tela de login/cadastro */
+    font-size: 3vw;
+    color: #ffffff;
+}
+
+.right-login{       /*parte direita da tela de login/cadastro */
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login{        /*Card com as informacoes de usuario*/
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #55e5c5;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.521);
+}
+
+.card-login > h1{       /*Titulo do card > escrever CADASTRO ou LOGIN*/
+    color: #051c2a;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textfield{     /*Caixa de texto que serve tanto de usuario e senha > no html tem 2 textfield*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input {        /*input eh referente ao tipo da caixa de texto e o que sera escrito dentro*/
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #ffffff;
+    color: #051c2a;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.521);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > label{     /*label eh "Usuario" e "Senha" escritos fora da caixa de texto*/
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.textfield > input::placeholder{        /*placeholder eh um atributo que coloca uma mensagem enquanto nao for escrito na caixa de texto*/
+color: #051c2a;
+}
+
+
+.btn-login{         /*Botao que efetua o login ou cadastro*/
+    width: 100%;
+    padding: 16px 0px;
+    margin: 15px 5px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #051c2a;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #04acb6;
+}
+
+
+/*responsividade*/
+@media only screen and (max-width:952px) {      /*Quando o card login chegar a 952 px o tamanho dele sera 85% da tela*/
+    .card-login{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width:600px) {      /*Quando o main login chegar a 600 px o tamanho dele sera 85% da tela*/
+.main-login{   
+    flex-direction: column;     /*Como o tamanho mudou, precisa mudar alguns layouts
+                                Alterou a div pai de todos pra ficar em coluna ao inves de uma do lado da outra*/
+}                               /*Left ficou em cima e right ficou em baixo*/
+
+.left-login > h1{     
+    display: none;      /*Assim que a div main login 
+                        atingir o tamanho de 600px o texto vai sumir*/
+}
+
+.left-login {
+    width: 100%;        /*A div left login vai cobrir 100% da parte de cima*/
+    height: auto;       /*Deixando automatica para ficar alinhado com a div right login*/
+}
+
+.right-login {
+    width: 100%;        /*Div right login parte de baixo vai ocupar 100%*/
+    height: auto;       /*Deixando automatica para ficar alinhado com a div left login*/
+}
+
+.left-login-img{
+    width: 70vw;        /*a imagem vai ocupar 70% de largura da tela que for visualizada*/
+}
+
+.card-login{
+    width: 90%;     /*a div do card login vai ocupar 90% da tela */
+}
+}
